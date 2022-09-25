@@ -130,47 +130,15 @@ function draw_frog(){
         })
     }
     else {
-        frog.visible = false
         frog.set({
             left: cell_border + player.coords[0] * (cell_width + cell_border),
             top: cell_border + player.coords[1] * (cell_height + cell_border) - 20,
         })
-        frog.setSrc(frog_img_url, (oImg)=>{
+        frog.setSrc(frog_img_url, (oImg) => {
             frog = oImg
             canvas.renderAll()
         })
-        new fabric.Sprite.fromURL('./Frags/spritesheet.png', function(sprite) {
-            sprite.set({
-                left: cell_border + player.last_coords[0] * (cell_width + cell_border),
-                top: cell_border + player.last_coords[1] * (cell_height + cell_border) - 23,
-            });
-            if(player.last_coords[0] !== player.coords[0] || player.last_coords[1] !== player.coords[1]) {
-                player.last_coords[0] = player.coords[0]
-                player.last_coords[1] = player.coords[1]
-            }
-            sprite.scaleToWidth(cell_width * 2 + cell_border, false)
-            canvas.add(sprite);
-            sprite.set('dirty', true);
-            sprite.play();
-            setTimeout(()=>{
-                sprite.stop()
-                frog.visible = true
-                canvas.remove(sprite)
-            }, 550)
-        }, {
-            width: 2000,
-            height: 1000,
-            spriteIndex: 0,
-            frameTime: 50,
-        })
     }
-}
-
-fabric.util.requestAnimFrame(render)
-
-function render() {
-    canvas.renderAll();
-    fabric.util.requestAnimFrame(render);
 }
 
 function generate_playfield() {
