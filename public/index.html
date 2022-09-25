@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>main page or sth</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
-main body or sth
-    <header>
-        WE GOT SOME CODE BAAAYYYBEEE
-    </header>
-frank if you read this i am already dead
+    <button id="generate" onclick="generate_playfield(generate_rand_int(15))">generate</button>
+    <button id="clear" onclick="clearCanvas()">clear</button>
+    <br>
+    <canvas id="playfield" width="1055" height="535"></canvas>
+    <div id="keymap"></div>
 </body>
 </html>
