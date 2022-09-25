@@ -8,10 +8,11 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <button id="generate" onclick="generate_playfield(generate_rand_int(15))">generate</button>
+    <button id="generate" onclick="generate_playfield()">generate</button>
     <button id="clear" onclick="clearCanvas()">clear</button>
+    <div id="loading_text"></div>
     <br>
-    <canvas id="playfield" width="1055" height="535"></canvas>
+    <canvas id="playfield" width="980" height="590"></canvas>
     <div id="keymap"></div>
 </body>
 </html>
