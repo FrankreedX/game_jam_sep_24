@@ -2,16 +2,17 @@ fabric.Sprite = fabric.util.createClass(fabric.Image, {
 
     type: 'sprite',
 
-    spriteWidth: 2000,
-    spriteHeight: 1000,
+    spriteWidth: 0,
+    spriteHeight: 0,
     spriteIndex: 0,
-    frameTime: 50,
+    frameTime: 0,
 
     initialize: function(element, options) {
         options || (options = { });
-
-        options.width = this.spriteWidth;
-        options.height = this.spriteHeight;
+        this.spriteWidth = options.width
+        this.spriteHeight = options.height
+        this.spriteIndex = options.spriteIndex
+        this.frameTime = options.frameTime
 
         this.callSuper('initialize', element, options);
 

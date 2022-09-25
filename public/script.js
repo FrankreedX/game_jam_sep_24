@@ -142,7 +142,7 @@ function draw_frog(){
         new fabric.Sprite.fromURL('./Frags/spritesheet.png', function(sprite) {
             sprite.set({
                 left: cell_border + player.last_coords[0] * (cell_width + cell_border),
-                top: cell_border + player.last_coords[1] * (cell_height + cell_border) - 20,
+                top: cell_border + player.last_coords[1] * (cell_height + cell_border) - 23,
             });
             if(player.last_coords[0] !== player.coords[0] || player.last_coords[1] !== player.coords[1]) {
                 player.last_coords[0] = player.coords[0]
@@ -157,6 +157,11 @@ function draw_frog(){
                 frog.visible = true
                 canvas.remove(sprite)
             }, 550)
+        }, {
+            width: 2000,
+            height: 1000,
+            spriteIndex: 0,
+            frameTime: 50,
         })
     }
 }
@@ -182,6 +187,7 @@ function generate_playfield() {
     canvas.renderAll()
 
     let current_coord = [0, y]
+    player.last_coords = [0, y]
     player.coords = [0, y]
 
     let temp_coords = []
